@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require("express");
 const provRoutes = require("./src/routes/prov.route");
 const searchRoutes = require("./src/routes/search.route");

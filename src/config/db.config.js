@@ -1,13 +1,13 @@
-const { Pool, types } = require('pg')
+const { Pool, types } = require("pg");
 
 types.setTypeParser(types.builtins.NUMERIC, (value) => parseFloat(value));
 
 const pool = new Pool({
-    user: "postgres",
-    host: "localhost",
-    database: "data_daerah",
-    password: "supostgres",
-    port: 5432
-})
+  user: process.env.PSQL_USER,
+  host: process.env.PSQL_HOST,
+  database: process.env.PSQL_DB,
+  password: process.env.PSQL_PASSWORD,
+  port: process.env.PSQL_PORT,
+});
 
-module.exports = pool
+module.exports = pool;
