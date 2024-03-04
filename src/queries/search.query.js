@@ -1,0 +1,9 @@
+const GET_PROVINCE_BY_NAME = 'SELECT * FROM provinsi WHERE nama ILIKE $1';
+const GET_KABUPATEN_KOTA_BY_NAME = 'SELECT * FROM kabupaten_kota WHERE nama ILIKE $1';
+const GET_KECAMATAN_BY_NAME = 'SELECT * FROM kecamatan WHERE nama ILIKE $1';
+
+module.exports = {
+  GET_PROVINCE_BY_NAME,
+  GET_KABUPATEN_KOTA_BY_NAME,
+  GET_KECAMATAN_BY_NAME
+};
