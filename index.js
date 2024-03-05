@@ -12,6 +12,7 @@ const port = 3000;
 app.use(express.json());
 
 app.get("/", (req, res) => res.send("Data Daerah BE is up and running"));
+app.get("/api/v1", (req, res) => res.send("Data Daerah API v1 is up and running"));
 app.use("/api/v1/provinsi", provRoutes);
 app.use("/api/v1/search", searchRoutes);
 app.use("/api/v1/kabupaten-kota", kabKotaRoutes);
