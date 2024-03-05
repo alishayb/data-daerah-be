@@ -8,17 +8,19 @@ const get = async (req, res) => {
     const data = {};
 
     const provRes = await pool.query(query.GET_PROVINCE_BY_NAME, [squery]);
-    data["provinsi"] = provRes.rows
+    data["provinsi"] = provRes.rows;
 
-    const kabKotaRes = await pool.query(query.GET_KABUPATEN_KOTA_BY_NAME, [squery]);
-    data["kabupaten_kota"] = kabKotaRes.rows
+    const kabKotaRes = await pool.query(query.GET_KABUPATEN_KOTA_BY_NAME, [
+      squery,
+    ]);
+    data["kabupaten_kota"] = kabKotaRes.rows;
 
     const kecRes = await pool.query(query.GET_KECAMATAN_BY_NAME, [squery]);
-    data["kecamatan"] = kecRes.rows
-    
+    data["kecamatan"] = kecRes.rows;
+
     res.status(200).json(data);
   } catch (error) {
-    throw error;
+    res.status(500).json({ message: "An unexpected error occurred." });
   }
 };
 
